@@ -1,1 +1,47 @@
-
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<div class="bg-orb orb-3"></div>
+<div class="app">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">N</div>
+            <div class="brand-text"><h1>Nexus AI</h1><p>Asisten Cerdas</p></div>
+        </div>
+        <button class="new-chat" onclick="newSession()">+ Percakapan Baru</button>
+        <div class="section-label">Riwayat</div>
+        <div class="session-list" id="session-list"></div>
+        <div class="sidebar-footer"><div class="status-dot"></div><span>Terhubung</span></div>
+    </aside>
+    <main class="main">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <h2 id="chat-title">Percakapan Baru</h2>
+                <p id="chat-subtitle">Mulai diskusi</p>
+            </div>
+            <div class="reasoning-toggle" id="reasoning-toggle" onclick="toggleReasoning()">
+                <div class="toggle-switch"></div><span>Mode Reasoning</span>
+            </div>
+        </div>
+        <div id="chat-box"></div>
+        <div class="input-area">
+            <div class="input-wrapper">
+                <textarea id="user-input" placeholder="Ketik pesan..." rows="1" onkeydown="if(event.key==='Enter' && !event.shiftKey){ event.preventDefault(); sendMessage(); }" oninput="autoResize(this)"></textarea>
+                <button class="send-btn" id="send-btn" onclick="sendMessage()">➤</button>
+            </div>
+            <div class="input-hint"><kbd>Enter</kbd> kirim · <kbd>Shift+Enter</kbd> baris baru</div>
+        </div>
+    </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
